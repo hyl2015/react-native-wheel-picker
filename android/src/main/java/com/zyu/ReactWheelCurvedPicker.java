@@ -1,14 +1,6 @@
 package com.zyu;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.os.SystemClock;
-import android.util.AttributeSet;
-
-import com.aigestudio.wheelpicker.core.AbstractWheelPicker;
+import android.graphics.*;
 import com.aigestudio.wheelpicker.view.WheelCurvedPicker;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
@@ -18,7 +10,6 @@ import com.facebook.react.uimanager.events.Event;
 import com.facebook.react.uimanager.events.EventDispatcher;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,7 +18,7 @@ import java.util.List;
 public class ReactWheelCurvedPicker extends WheelCurvedPicker {
 
     private final EventDispatcher mEventDispatcher;
-    private List<Integer> mValueData;
+    private List<String> mValueData;
 
     public ReactWheelCurvedPicker(ReactContext reactContext) {
         super(reactContext);
@@ -59,7 +50,7 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
         paint.setColor(Color.WHITE);
         int colorFrom = 0x00FFFFFF;//Color.BLACK;
         int colorTo = Color.WHITE;
-        LinearGradient linearGradientShader = new LinearGradient(rectCurItem.left, rectCurItem.top, rectCurItem.right/2, rectCurItem.top, colorFrom, colorTo, Shader.TileMode.MIRROR);
+        LinearGradient linearGradientShader = new LinearGradient(rectCurItem.left, rectCurItem.top, rectCurItem.right / 2, rectCurItem.top, colorFrom, colorTo, Shader.TileMode.MIRROR);
         paint.setShader(linearGradientShader);
         canvas.drawLine(rectCurItem.left, rectCurItem.top, rectCurItem.right, rectCurItem.top, paint);
         canvas.drawLine(rectCurItem.left, rectCurItem.bottom, rectCurItem.right, rectCurItem.bottom, paint);
@@ -69,10 +60,10 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
     public void setItemIndex(int index) {
         super.setItemIndex(index);
         unitDeltaTotal = 0;
-		mHandler.post(this);
+        mHandler.post(this);
     }
 
-    public void setValueData(List<Integer> data) {
+    public void setValueData(List<String> data) {
         mValueData = data;
     }
 
@@ -85,9 +76,9 @@ class ItemSelectedEvent extends Event<ItemSelectedEvent> {
 
     public static final String EVENT_NAME = "wheelCurvedPickerPageSelected";
 
-    private final int mValue;
+    private final String mValue;
 
-    protected ItemSelectedEvent(int viewTag,  int value) {
+    protected ItemSelectedEvent(int viewTag, String value) {
         super(viewTag);
         mValue = value;
     }
@@ -104,7 +95,7 @@ class ItemSelectedEvent extends Event<ItemSelectedEvent> {
 
     private WritableMap serializeEventData() {
         WritableMap eventData = Arguments.createMap();
-        eventData.putInt("data", mValue);
+        eventData.putString("data", mValue);
         return eventData;
     }
 }

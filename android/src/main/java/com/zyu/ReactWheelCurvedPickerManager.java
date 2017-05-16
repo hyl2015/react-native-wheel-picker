@@ -1,7 +1,6 @@
 package com.zyu;
 
 import android.graphics.Color;
-
 import com.aigestudio.wheelpicker.core.AbstractWheelPicker;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
@@ -41,14 +40,14 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
         );
     }
 
-    @ReactProp(name="data")
+    @ReactProp(name = "data")
     public void setData(ReactWheelCurvedPicker picker, ReadableArray items) {
         if (picker != null) {
-            ArrayList<Integer> valueData = new ArrayList<>();
+            ArrayList<String> valueData = new ArrayList<>();
             ArrayList<String> labelData = new ArrayList<>();
-            for (int i = 0; i < items.size(); i ++) {
+            for (int i = 0; i < items.size(); i++) {
                 ReadableMap itemMap = items.getMap(i);
-                valueData.add(itemMap.getInt("value"));
+                valueData.add(itemMap.getString("value"));
                 labelData.add(itemMap.getString("label"));
             }
             picker.setValueData(valueData);
@@ -56,7 +55,7 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
         }
     }
 
-    @ReactProp(name="selectedIndex")
+    @ReactProp(name = "selectedIndex")
     public void setSelectedIndex(ReactWheelCurvedPicker picker, int index) {
         if (picker != null && picker.getState() == AbstractWheelPicker.SCROLL_STATE_IDLE) {
             picker.setItemIndex(index);
@@ -64,7 +63,7 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
         }
     }
 
-    @ReactProp(name="textColor", customType = "Color")
+    @ReactProp(name = "textColor", customType = "Color")
     public void setTextColor(ReactWheelCurvedPicker picker, Integer color) {
         if (picker != null) {
             picker.setCurrentTextColor(color);
@@ -72,14 +71,14 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
         }
     }
 
-    @ReactProp(name="textSize")
+    @ReactProp(name = "textSize")
     public void setTextSize(ReactWheelCurvedPicker picker, int size) {
         if (picker != null) {
             picker.setTextSize(size * 2);
         }
     }
 
-    @ReactProp(name="itemSpace")
+    @ReactProp(name = "itemSpace")
     public void setItemSpace(ReactWheelCurvedPicker picker, int space) {
         if (picker != null) {
             picker.setItemSpace(space * 2);

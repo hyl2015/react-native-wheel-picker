@@ -53,6 +53,8 @@ const WheelCurvedPicker = React.createClass ({
 			if (child.props.value === props.selectedValue) {
 				selectedIndex = index;
 			}
+
+
 			items.push({value: child.props.value, label: child.props.label});
 		});
 

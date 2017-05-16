@@ -9,6 +9,7 @@ const styles = {
   picker: {
     backgroundColor: '#d3d3d3',
     height: 220
+
   },
   picker__item: {
     color: '#333333',

@@ -1,33 +1,93 @@
 {
-  "name": "rn-wheel-picker",
-  "version": "2.0.0",
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/hyl2015/react-native-wheel-picker.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/hyl2015/react-native-wheel-picker.git",
+        "spec": "git+https://github.com/hyl2015/react-native-wheel-picker.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:hyl2015/react-native-wheel-picker.git",
+          "sshUrl": "git+ssh://git@github.com/hyl2015/react-native-wheel-picker.git",
+          "httpsUrl": "git+https://github.com/hyl2015/react-native-wheel-picker.git",
+          "gitUrl": "git://github.com/hyl2015/react-native-wheel-picker.git",
+          "shortcut": "github:hyl2015/react-native-wheel-picker",
+          "directUrl": "https://raw.githubusercontent.com/hyl2015/react-native-wheel-picker/master/package.json"
+        }
+      },
+      "/Users/Angela/Documents/work/yk/league"
+    ]
+  ],
+  "_from": "git+https://github.com/hyl2015/react-native-wheel-picker.git",
+  "_id": "rn-wheel-picker@2.0.0",
+  "_inCache": true,
+  "_location": "/rn-wheel-picker",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/hyl2015/react-native-wheel-picker.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/hyl2015/react-native-wheel-picker.git",
+    "spec": "git+https://github.com/hyl2015/react-native-wheel-picker.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:hyl2015/react-native-wheel-picker.git",
+      "sshUrl": "git+ssh://git@github.com/hyl2015/react-native-wheel-picker.git",
+      "httpsUrl": "git+https://github.com/hyl2015/react-native-wheel-picker.git",
+      "gitUrl": "git://github.com/hyl2015/react-native-wheel-picker.git",
+      "shortcut": "github:hyl2015/react-native-wheel-picker",
+      "directUrl": "https://raw.githubusercontent.com/hyl2015/react-native-wheel-picker/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/hyl2015/react-native-wheel-picker.git#6e069047cf95477453cfd93cc530a4e1dba03746",
+  "_shasum": "6f07e5e4907aa2784f5cba648160c93efada30e9",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/hyl2015/react-native-wheel-picker.git",
+  "_where": "/Users/Angela/Documents/work/yk/league",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/wusuopu/react-native-wheel-picker/issues"
+  },
+  "dependencies": {
+    "lodash": "*",
+    "moment": "*"
+  },
   "description": "React native cross platform picker.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wusuopu/react-native-wheel-picker.git"
-  },
+  "devDependencies": {},
+  "gitHead": "6e069047cf95477453cfd93cc530a4e1dba03746",
+  "homepage": "https://github.com/wusuopu/react-native-wheel-picker#readme",
   "keywords": [
     "react-native",
     "picker",
     "wheel"
   ],
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wusuopu/react-native-wheel-picker/issues"
-  },
-  "homepage": "https://github.com/wusuopu/react-native-wheel-picker#readme",
-  "dependencies": {
-    "lodash": "*",
-    "moment": "*"
+  "main": "index.js",
+  "name": "rn-wheel-picker",
+  "optionalDependencies": {},
+  "readme": "# rn-wheel-picker\n\nA iOS style picker components for ReactNative. It's forked from [react-native-wheel-picker](https://github.com/lesliesam/react-native-wheel-picker).\n\n## Introduction\nCross platform Picker component based on React-native.\n\nSince picker is originally supported by ios while Android only supports a ugly Spinner component. If you want to have the same user behaviour, you can use this.\n\nThe android component is based on https://github.com/AigeStudio/WheelPicker which runs super fast and smoothly. It also supports curved effect which make it exactly the same looking and feel as the ios picker.\n![](screenshots/ios1.png)\n![](screenshots/ios2.png)\n\n![](screenshots/android.png)\n\n## How to use\n\nRun command\n\nFor apps using RN 0.32 or higher, please run\n\n```\nnpm i react-native-wheel-picker --save\n```\n\nFor apps using RN 0.31 or less, please run\n\n```\nnpm install --save --save-exact react-native-wheel-picker@1.9.0\n```\n\nConfigration:\n\n```\nreact-native link rn-wheel-picker\n```\n\n## Example code\n\n```\nimport { Picker, DatePicker } from 'rn-wheel-picker'\n\n// use DatePicker\n<DatePicker mode=\"date\" />\n\n// use Picker\n<Picker\n  style={{flex: 1}}\n  selectedValue={1}\n  pickerData={[1, 2, 3, 4, 5, 6]}\n  onValueChange={(value) => this.setState({value})}\n/>\n```\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wusuopu/react-native-wheel-picker.git"
   },
   "rnpm": {
     "android": {
       "packageInstance": "new ReactNativeWheelPickerPackage()"
     }
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.0"
 }
